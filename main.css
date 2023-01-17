@@ -31,6 +31,11 @@
 	color: #fff;
 }
 
+.page-item.active .page-link {
+	background-color: #333;
+	border-color: #333;
+}
+
 table thead{
 	border-color:rgba(68, 68, 68, 0.5);
 }
