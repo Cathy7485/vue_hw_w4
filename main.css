@@ -1,0 +1,72 @@
+.btn-primary {
+	background-color: #232323;
+	border: #232323;
+}
+
+.btn-outline-primary {
+	color: #232323;
+	border: solid 1px #232323;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+	background-color: #333;
+}
+
+.btn-primary:active,
+.btn-outline-primary:active {
+	background-color: #333;
+}
+
+.btn-primary:visited,
+.btn-outline-primary:visited {
+	background-color: #333;
+}
+
+.btn-primary:focus,
+.btn-outline-primary:focus {
+	background-color: #333;
+	border-color: #333;
+	box-shadow: 0 0 0 .25rem rgba(68, 68, 68, 0.5);
+	color: #fff;
+}
+
+table thead{
+	border-color:rgba(68, 68, 68, 0.5);
+}
+
+/* login */
+html,
+body {
+	height: 100%;
+	/* text-align: center; */
+	font-family: '微軟正黑體';
+}
+
+.login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 4rem;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 330px;
+	padding: 15px;
+	margin: auto;
+}
+
+/* index */
+img {
+	object-fit: contain;
+	max-width: 100%;
+}
+
+.primary-image {
+	height: 300px;
+}
+
+.images {
+	height: 150px;
+}
