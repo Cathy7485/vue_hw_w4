@@ -52,8 +52,6 @@
 			const signUrl = 'https://vue3-course-api.hexschool.io/v2/admin/signin'; // 站點
 			const path = 'kc777'; // API Path
 
-			const email = document.querySelector("#username");
-			const code = document.querySelector("#password");
 			import { createApp } from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.esm-browser.min.js";
 				// 1.建立元件
 				const app = {
@@ -74,11 +72,10 @@
 								.then((res) => {
 									const { token, expired } = res.data;
 									document.cookie = `hexToken=${token}; expires=${new Date(expired)};`; //hexToken是自定義名稱，expired要先轉型
-									axios.defaults.headers.common['Authorization'] = token; //每次都把token夾帶到headers裡
 									window.location = 'products.html'; // 跳轉畫面
 								})
-								.catch((error) => {
-									alert(error.response.data.message);
+								.catch((err) => {
+									alert(err.data.message);
 								})
 						},
 					}

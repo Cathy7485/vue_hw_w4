@@ -43,7 +43,7 @@ const app = createApp({
           alert(error.data.message);
         })
     },
-    openModal(status, item) {
+    openModal(status, product) {
       if (status === 'add') {
         productModal.show();
         this.isNew = true; //是新增
@@ -55,10 +55,10 @@ const app = createApp({
         productModal.show();
         this.isNew = false; //不是新增
         //會帶入當前要編輯的資料
-        this.tempProduct = { ...item }; //要展開才不會沒儲存就資料連動
+        this.tempProduct = { ...product }; //要展開才不會沒儲存就資料連動
       } else if(status === 'del'){
         delProductModal.show();
-        this.tempProduct = { ...item }; // 等等要取id使用
+        this.tempProduct = { ...product }; // 等等要取id使用
       }
     },
     updateProduct(){

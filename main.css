@@ -75,3 +75,7 @@ img {
 .images {
 	height: 150px;
 }
+
+.pagination .active.disabled a{
+	color: #fff;
+}

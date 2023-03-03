@@ -40,24 +40,23 @@
             </th>
           </tr>
         </thead>
-        <tbody v-for="item in products" :key="item.id">
+        <tbody v-for="product in products" :key="product.id">
           <tr>
-            <td><span class="badge bg-secondary">{{ item.category }}</span></td>
-            <td>{{ item.title }}</td>
-            <td class="text-start">{{ item.origin_price }}</td>
-            <td class="text-start">{{ item.price }}</td>
+            <td><span class="badge bg-secondary">{{ product.category }}</span></td>
+            <td>{{ product.title }}</td>
+            <td class="text-start">{{ product.origin_price }}</td>
+            <td class="text-start">{{ product.price }}</td>
             <td>
-              <span class="text-success" v-if="item.is_enabled">啟用</span>
-              <span v-else>未啟用</span>
+							<span class="text-success">{{ product.is_enabled ? '啟用' : '未啟用' }}</span>
             </td>
             <td>
               <div class="btn-group">
-                <!-- v:on裡的item是參數，當下要編輯/刪除的項目 -->
+                <!-- v:on裡的product是參數，當下要編輯/刪除的項目 -->
                 <button type="button" id="editBtn" class="btn btn-outline-primary btn-sm"
-                  @click="openModal('edit', item)">
+                  @click="openModal('edit', product)">
                   編輯
                 </button>
-                <button type="button" class="btn btn-outline-danger btn-sm" @click="openModal('del', item)">
+                <button type="button" class="btn btn-outline-danger btn-sm" @click="openModal('del', product)">
                   刪除
                 </button>
               </div>
@@ -71,7 +70,7 @@
     <!-- Modal -->
     <div id="productModal" ref="productModal" class="modal fade" tabindex="-1" aria-labelledby="productModalLabel"
       aria-hidden="true">
-      <product-modal :temp-product="tempProduct" :update-product="updateProduct"></product-modal>
+      <product-modal :temp-product="tempProduct" :is-new="isNew" :update-product="updateProduct"></product-modal>
     </div>
     <div id="delProductModal" ref="delProductModal" class="modal fade" tabindex="-1"
       aria-labelledby="delProductModalLabel" aria-hidden="true">
@@ -192,9 +191,9 @@
             <button type="button" class="btn btn-primary" @click="updateProduct">
               確認
             </button>
-          </div >
-        </div >
-      </div >
+          </div>
+        </div>
+      </div>
   </script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.min.js'
     integrity='sha512-Xk3wWei2TGrsh9kDSBKUMIjw/86sLUvhtnv9f7fOuIwhhiUTKz8szkWkzHthrM5Bb3Bu9idSzkxOrkzhcneuiw=='

@@ -10,7 +10,7 @@ export default{
         </a>
       </li>
       <li class="page-item" 
-        :class="{ active: page === pages.current_page }"
+        :class="{ active: page === pages.current_page , disabled: page === pages.current_page }"
         v-for="page in pages.total_pages" :key="page + 'page'">
         <a class="page-link" href="#" 
           @click.prevent="getProducts(page)">{{ page }}</a>
